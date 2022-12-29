@@ -2,9 +2,9 @@ namespace GuiltyGear.WebApp.Data;
 
 public interface IGameRepository
 {
-    public IEnumerable<IGameCharacter> GetAllCharacters();
-    public IGameCharacter GetCharacterDataByName(int characterId);
-    public IEnumerable<ICharacterMove> GetCharacterMoveList(int characterId);
-    public ICharacterMove GetCharacterMoveData(int moveId);
-    public IGatlingData GetMoveGatlingData(int moveId);
+    public Task<IEnumerable<StriveCharacter>> GetAllCharacters();
+    public Task<IGameCharacter?> GetCharacterData(int characterId);
+    public Task<IEnumerable<ICharacterMove>> GetCharacterMoveList(int characterId);
+    public Task<ICharacterMove?> GetCharacterMoveData(int moveId);
+    public Task<IGatlingData?> GetMoveGatlingData(int moveId);
 }
